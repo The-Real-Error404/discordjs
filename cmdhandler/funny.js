@@ -2,13 +2,8 @@ const { MessageEmbed } = require('discord.js')
 const randomPuppy = require('random-puppy')
 
 module.exports = {
-  commands: ['funny', 'makemelaugh', 'funnymeme'],
+  commands: ['funny'],
   description: 'Shows a  funny meme',
-  usage: null,
-  minArgs: null,
-  maxArgs: 0,
-  permissions: [],
-  requiredRoles: [],
   callback: async message => {
     const subReddits = ["funny"]
     const random = subReddits[Math.floor(Math.random() * subReddits.length)]
@@ -20,7 +15,7 @@ module.exports = {
       .setImage(image)
       .setColor('RANDOM')
       .setURL(`https://reddit.com/r/${random}`)
-      .setFooter('Click on the title to visit the subreddit!')
+      .setFooter('Title leads to Subreddit!')
       .addFields(
         { name: 'Funny Meme From:', value: `${random}`, inline: true }
       )
